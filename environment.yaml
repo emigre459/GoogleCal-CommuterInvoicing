@@ -94,4 +94,3 @@ dependencies:
   - zeromq=4.2.5=h378b8a2_0
   - zlib=1.2.11=hf3cbc9b_2
 prefix: /Users/emigre459/anaconda3/envs/CommuterInvoicing
-
