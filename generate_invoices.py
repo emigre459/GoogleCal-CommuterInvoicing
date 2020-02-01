@@ -169,10 +169,10 @@ def get_events(start_date, end_date, creds):
                 tzinfo=dt.timezone.utc).isoformat()[:-6] + 'Z'
     
     end_date = dt.datetime.strptime(end_date, '%m-%d-%Y')
-    end = dt.datetime(year=end_date.year, 
+    end = (dt.datetime(year=end_date.year, 
                 month=end_date.month, 
-                day=end_date.day+1, 
-                tzinfo=dt.timezone.utc).isoformat()[:-6] + 'Z'
+                day=end_date.day, 
+                tzinfo=dt.timezone.utc) + dt.timedelta(days=1)).isoformat()[:-6] + 'Z'
     
     events_result = service.events().list(calendarId=CALENDAR_ID, 
                                           timeMin=start,
